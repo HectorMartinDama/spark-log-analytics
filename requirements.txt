@@ -1,0 +1,9 @@
+# PySpark
+pyspark==4.0
+
+# Librerías auxiliares para procesamiento de datos
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Utilidades
+python-dateutil>=2.8.0
