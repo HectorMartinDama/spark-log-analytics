@@ -16,7 +16,7 @@
 # MAGIC ```
 # MAGIC
 # MAGIC ### Tecnologías Utilizadas
-# MAGIC - **Spark 4.0** con Adaptive Query Execution
+# MAGIC - **Spark 4.0.1** con Adaptive Query Execution
 # MAGIC - **Delta Lake** para gestión ACID de datos
 # MAGIC - **Databricks Runtime** optimizado
 # MAGIC - **Unity Catalog** para data governance
@@ -442,5 +442,5 @@ display(daily_trends)
 # MAGIC ---
 # MAGIC
 # MAGIC **Proyecto creado por**: Héctor Martín  
-# MAGIC **Tecnologías**: PySpark 4.0, Delta Lake, Databricks Runtime  
+# MAGIC **Tecnologías**: PySpark 4.0.1, Delta Lake, Databricks Runtime  
 # MAGIC **Fecha**: Diciembre 2024

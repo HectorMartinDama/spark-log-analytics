@@ -1,5 +1,5 @@
 # PySpark
-pyspark==4.0
+pyspark==4.0.1
 
 # Librerías auxiliares para procesamiento de datos
 pandas>=2.0.0

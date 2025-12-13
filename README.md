@@ -89,7 +89,7 @@ python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 # 3. Instalar dependencias
-pip install pyspark==4.0
+pip install pyspark==4.0.1
 pip install pandas  # opcional, para análisis adicional
 
 # 4. Ejecutar el pipeline
@@ -226,7 +226,7 @@ python web_log_pipeline.py --log-level DEBUG
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Apache Spark 4.0**: Motor de procesamiento distribuido
+- **Apache Spark**: Motor de procesamiento distribuido
 - **PySpark**: API de Python para Spark
 - **Parquet**: Formato columnar de almacenamiento
 - **Delta Lake** (opcional): Gestión de data lakes con ACID
