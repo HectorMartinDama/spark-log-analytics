@@ -80,7 +80,7 @@ jobs:
 
             - name: Upload test report
               if: always()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v6
               with:
                   name: test-report-${{ matrix.python-version }}
                   path: report.html
@@ -138,7 +138,7 @@ jobs:
 
             - name: Upload security report
               if: always()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v6
               with:
                   name: security-report
                   path: bandit-report.json
