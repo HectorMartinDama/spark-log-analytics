@@ -162,32 +162,6 @@ def test_integracion_completa():
     pass
 ```
 
-## 🔧 Fixtures Disponibles
-
-### Fixtures de Spark
-
-- **`spark_session`** (scope: session): Spark Session compartida para toda la suite
-- **`spark`** (scope: function): Spark Session limpia para cada test
-
-### Fixtures de Datos
-
-- **`sample_web_logs`**: DataFrame pequeño (5 registros) para tests rápidos
-- **`large_web_logs`**: DataFrame grande (1000 registros) para tests de performance
-
-### Fixtures de Utilidades
-
-- **`temp_output_path`**: Directorio temporal para guardar outputs
-- **`mock_config`**: Configuración mock para tests
-- **`expected_schema`**: Schema esperado para validaciones
-
-## ✅ Buenas Prácticas
-
-1. **Nombres descriptivos**: `test_debe_detectar_bots_correctamente()`
-2. **Un assert por test**: Mejor múltiples tests pequeños que uno grande
-3. **Arrange-Act-Assert**: Estructura clara en cada test
-4. **Fixtures reutilizables**: Define fixtures en conftest.py
-5. **Marcar tests**: Usa `@pytest.mark` para categorizar
-6. **Documentar**: Añade docstrings explicando qué verifica el test
 
 ## 🐛 Debugging
 
@@ -197,16 +171,7 @@ def test_integracion_completa():
 pytest tests/ -vv -s --tb=long
 ```
 
-### Usar breakpoint en tests
 
-```python
-def test_con_debug(spark, sample_web_logs):
-    df = sample_web_logs
-    breakpoint()  # Python 3.7+
-    # o
-    import pdb; pdb.set_trace()
-    result = df.filter(...)
-```
 
 ### Ver solo los fallos
 
@@ -234,35 +199,8 @@ pytest tests/ --durations=10
 
 Objetivo: ≥ 80% de cobertura
 
-## 🚨 Solución de Problemas
 
-### "Spark Session no se inicia"
 
-Asegúrate de tener Java instalado:
-
-```bash
-java -version
-```
-
-### "ModuleNotFoundError"
-
-Instala las dependencias:
-
-```bash
-pip install -r requirements-dev.txt
-```
-
-### "Tests muy lentos"
-
-Ejecuta solo tests rápidos:
-
-```bash
-pytest tests/ -m "not slow"
-```
-
-### "Fixture not found"
-
-Verifica que conftest.py esté en la carpeta tests/
 
 ## 🔄 CI/CD
 
