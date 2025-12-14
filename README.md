@@ -2,6 +2,9 @@
 ![Coverage](https://img.shields.io/badge/coverage-85%25-green)
 
 
+[Ver resultados de los Tests](https://hectormartindama.github.io/spark-log-analytics/reports/report.html)
+
+
 
 # 🚀 Web Log Analytics Pipeline - PySpark
 
@@ -62,6 +65,15 @@ Sistema de análisis de logs web implementado con **PySpark** que simula un caso
 5. **Load**: Persistencia en formato Parquet optimizado
 
 ---
+
+## 🔄 CI/CD
+
+Los tests se ejecutan automáticamente en GitHub Actions cuando:
+
+- Haces push a `main` o `develop`
+- Creas un Pull Request
+
+Ver el workflow en: `.github/workflows/tests.yml`
 
 ## 🚀 Quick Start
 
