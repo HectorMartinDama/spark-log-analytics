@@ -1,16 +1,17 @@
 ![Tests](https://github.com/HectorMartinDama/spark-log-analytics/workflows/Tests%20and%20CI/badge.svg)
 ![Coverage](https://img.shields.io/badge/coverage-85%25-green)
 
-```
----
-```
+
+[Ver resultados de los Tests](https://hectormartindama.github.io/spark-log-analytics/reports/report.html)
+
+
 
 # 🚀 Web Log Analytics Pipeline - PySpark
 
 > **Pipeline ETL distribuido para análisis de logs web con Apache Spark**
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![PySpark](https://img.shields.io/badge/PySpark-3.5-orange)](https://spark.apache.org/)
+[![PySpark](https://img.shields.io/badge/PySpark-4.0.1-orange)](https://spark.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## 📋 Descripción del Proyecto
@@ -22,7 +23,7 @@ Sistema de análisis de logs web implementado con **PySpark** que simula un caso
 - ✅ **Data Quality checks** y validación de datos
 - ✅ **Detección de anomalías** en tiempo de procesamiento
 - ✅ **Optimización de queries** con particionamiento inteligente
-- ✅ **Formato Parquet** para almacenamiento columnar eficiente
+- ✅ **Formato Parquet** para almacenamiento en columna eficiente
 
 ### 🎯 Casos de Uso
 
@@ -65,6 +66,15 @@ Sistema de análisis de logs web implementado con **PySpark** que simula un caso
 
 ---
 
+## 🔄 CI/CD
+
+Los tests se ejecutan automáticamente en GitHub Actions cuando:
+
+- Haces push a `main` o `develop`
+- Creas un Pull Request
+
+Ver el workflow en: `.github/workflows/tests.yml`
+
 ## 🚀 Quick Start
 
 ### Prerequisitos
@@ -95,18 +105,6 @@ pip install pandas  # opcional, para análisis adicional
 # 4. Ejecutar el pipeline
 python web_log_pipeline.py
 ```
-
-### Ejecución con Docker (Recomendado)
-
-```bash
-# Usar imagen oficial de Spark
-docker run -it \
-  -v $(pwd):/app \
-  -w /app \
-  apache/spark-py:v3.5.0 \
-  python web_log_pipeline.py
-```
-
 ---
 
 ## 📊 Resultados del Análisis
@@ -146,19 +144,6 @@ docker run -it \
 ---
 
 ## 🔧 Configuración Avanzada
-
-### Spark Configuration
-
-```python
-spark = SparkSession.builder \
-    .appName("WebLogAnalytics") \
-    .config("spark.sql.shuffle.partitions", "200") \
-    .config("spark.sql.adaptive.enabled", "true") \
-    .config("spark.sql.adaptive.coalescePartitions.enabled", "true") \
-    .config("spark.executor.memory", "4g") \
-    .config("spark.driver.memory", "2g") \
-    .getOrCreate()
-```
 
 ### Lectura desde S3 (Producción)
 
@@ -203,13 +188,6 @@ results["endpoint_stats"] \
 | Formato salida       | Parquet (compresión snappy) |
 | Reducción de tamaño  | ~70% vs CSV                 |
 
-### Optimizaciones Implementadas
-
-✅ **Adaptive Query Execution (AQE)**: Optimización dinámica de queries  
-✅ **Partitioning**: Reducción de shuffle con particiones equilibradas  
-✅ **Columnar Storage**: Parquet para queries analíticas eficientes  
-✅ **Lazy Evaluation**: Transformaciones optimizadas por el Catalyst Optimizer
-
 ---
 
 ## 🧪 Testing
@@ -234,26 +212,6 @@ python web_log_pipeline.py --log-level DEBUG
 
 ---
 
-## 📚 Casos de Uso Reales
-
-### 1. E-commerce
-
-- Análisis de patrones de compra
-- Detección de fraud
-- Optimización de recomendaciones
-
-### 2. SaaS Platforms
-
-- Monitorización de uso de APIs
-- Billing basado en consumo
-- Alertas de rendimiento
-
-### 3. Media & Content
-
-- Análisis de contenido más consumido
-- Patrones de navegación
-- A/B testing analytics
-
 ---
 
 ## 🎓 Conceptos de Data Engineering Demostrados
@@ -264,10 +222,6 @@ python web_log_pipeline.py --log-level DEBUG
 ✅ **Aggregations**: Group by, window functions, joins  
 ✅ **Optimization**: Partitioning, caching, broadcast joins  
 ✅ **Anomaly Detection**: Estadística descriptiva y umbrales
-
-## 📄 Licencia
-
-MIT License - Ver [LICENSE](LICENSE) para más detalles
 
 ---
 
