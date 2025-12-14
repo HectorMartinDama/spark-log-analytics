@@ -80,10 +80,10 @@ Ver el workflow en: `.github/workflows/tests.yml`
 ### Prerequisitos
 
 ```bash
-# Python 3.8+
+# Python 3.9+
 python --version
 
-# Java 8 o 11 (requerido por Spark)
+# Java 17 o 21 (requerido por Spark)
 java -version
 ```
 
