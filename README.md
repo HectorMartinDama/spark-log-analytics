@@ -8,7 +8,7 @@
 > **Pipeline ETL distribuido para análisis de logs web con Apache Spark**
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![PySpark](https://img.shields.io/badge/PySpark-3.5-orange)](https://spark.apache.org/)
+[![PySpark](https://img.shields.io/badge/PySpark-4.0.1-orange)](https://spark.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ## 📋 Descripción del Proyecto
