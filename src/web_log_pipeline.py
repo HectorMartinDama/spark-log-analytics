@@ -19,7 +19,6 @@ import os
 class WebLogAnalyticsPipeline:
     """
     Pipeline ETL para análisis de logs web con PySpark.
-    Simula un caso real de Data Engineering en producción.
     """
     
     def __init__(self, app_name="WebLogAnalytics"):
@@ -38,7 +37,6 @@ class WebLogAnalyticsPipeline:
     def generate_sample_logs(self, num_records=10000):
         """
         Genera logs de muestra simulando tráfico web real.
-        En producción, esto vendría de S3, HDFS o un stream de Kafka.
         """
         from datetime import datetime, timedelta
         import random
@@ -69,7 +67,7 @@ class WebLogAnalyticsPipeline:
                 random.choice(user_agents)
             ))
         
-        # Crear DataFrame con schema explícito
+        # Crear DataFrame con schema
         schema = StructType([
             StructField("ip_address", StringType(), True),
             StructField("timestamp", StringType(), True),
@@ -237,7 +235,6 @@ class WebLogAnalyticsPipeline:
     def save_results(self, results_dict, output_path="./output"):
         """
         LOAD: Guardar resultados en formato Parquet
-        En producción: S3, Delta Lake, Data Warehouse
         """
         print(f"\n💾 LOAD: Guardando resultados en {output_path}...")
         
@@ -310,13 +307,7 @@ if __name__ == "__main__":
     pipeline = WebLogAnalyticsPipeline()
     
     try:
-        results = pipeline.run_pipeline()
-        
-        # Opcional: Análisis adicional interactivo
-        print("\n💡 Pipeline listo para análisis adicionales")
-        print("   - Puedes acceder a 'results' para más exploraciones")
-        print("   - Ejemplo: results['processed_data'].filter(...)")
-        
+        results = pipeline.run_pipeline()   
     except Exception as e:
         print(f"\n❌ Error en el pipeline: {str(e)}")
         raise
