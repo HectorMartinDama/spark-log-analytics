@@ -211,10 +211,6 @@ python web_log_pipeline.py --log-level DEBUG
 ✅ **Optimization**: Partitioning, caching, broadcast joins  
 ✅ **Anomaly Detection**: Estadística descriptiva y umbrales
 
-## 📄 Licencia
-
-MIT License - Ver [LICENSE](LICENSE) para más detalles
-
 ---
 
 ## 👤 Autor
